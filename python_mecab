@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 SHELL ["/bin/bash", "-c"]
 
 RUN set -x && \
@@ -11,6 +13,11 @@ RUN set -x && \
     python3-dev \
     python3-setuptools \
     python3-pip \
+    git \
+    curl \
+    locales \
+    language-pack-ja-base \
+    language-pack-ja \
     vim
 
 RUN locale-gen en_US.UTF-8  
